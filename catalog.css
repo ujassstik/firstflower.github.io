@@ -295,7 +295,233 @@ footer .footer_text2{
     font-size: 16px;
     text-align: center;
 }
+.button1{
+    background: #d68aab;
+    border-color: #D6A58A;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 14px;
+    padding: 8px 15px;
+    text-decoration: none;
+    text-align: center;
+    min-width: 220px;
+    position: relative;
+    margin-top: 10px;
+}
+ /* Стили модального окна */
+ .modal-header h2 {
+    color: #555;  
+    font-size: 20px;
+    font-weight: normal;
+    line-height: 1;    
+    margin: 0;
+}
+/* кнопка закрытия окна */
+.modal .btn-close {
+    color: #aaa;
+    cursor: pointer;
+    font-size: 30px;
+    text-decoration: none;
+    position: absolute;
+    right: 5px;
+    top: 0;
+}
+.modal .btn-close:hover {
+    color: rgb(63, 63, 63);
+}
+/* слой затемнения */
+.modal-wrap:before {
+    content: "";
+    display: none;
+    background: rgba(0, 0, 0, .3);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 101;
+}
+.modal-overlay {
+    bottom: 0;
+    display: none;
+    left: 0;
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 102;
+}
+/* активация слоя затемнения и модального блока */
+.modal-open:checked ~ .modal-wrap:before,
+.modal-open:checked ~ .modal-wrap .modal-overlay {
+    display: block;
+}
+.modal-open:checked ~ .modal-wrap .modal-dialog {
+    -webkit-transform: translate(-50%, 0);
+    -ms-transform: translate(-50%, 0);
+    -o-transform: translate(-50%, 0);
+    transform: translate(-50%, 0);
+    top: 20%;
+}
+/* элементы модального окна */
+.modal-dialog {
+    background: #404040;
+    border: none;
+    border-radius: 5px;
+    position: fixed;
+    width: 80%;
+    max-width: 500px;
+    left: 50%;
+    top: -100%;
+    -webkit-box-shadow: 0 15px 20px rgba(0,0,0,.22),0 19px 60px rgba(0,0,0,.3);
+    -moz-box-shadow: 0 15px 20px rgba(0,0,0,.22),0 19px 60px rgba(0,0,0,.3);
+    box-shadow: 0 15px 20px rgba(0,0,0,.22),0 19px 60px rgba(0,0,0,.3);
+    -webkit-transform: translate(-50%, -500%);
+    -ms-transform: translate(-50%, -500%);
+    -o-transform: translate(-50%, -500%);
+    transform: translate(-50%, -500%);
+    -webkit-transition: -webkit-transform 0.4s ease-out;
+    -moz-transition: -moz-transform 0.4s ease-out;
+    -o-transition: -o-transform 0.4s ease-out;
+    transition: transform 0.4s ease-out;
+    z-index: 103;
+}
+.modal-body {
+  padding: 20px;
+}
+.modal-body p {
+    margin: 0;
+}
+.modal-header,
+.modal-footer {
+    padding: 20px 20px;
+}
+.modal-header {
+    border-bottom: #eaeaea solid 1px;
+}
+.modal-header h2 {
+    font-size: 20px;
+    margin: 0;
+}
+.modal-footer {
+    border-top: #eaeaea solid 1px;
+    text-align: right;
+}
+/* адаптивные картинки в модальном блоке */
+.modal-body img { 
+    max-width: 100%;
+    height: auto;
+}
+/* кнопки */
+.btn {
+    background: #fff;
+    border: #555 solid 1px;
+    border-radius: 3px;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 14px;
+    padding: 8px 15px;
+    text-decoration: none;
+    text-align: center;
+    min-width: 60px;
+    position: relative;
+}
+.btn:hover, .btn:focus {
+    background: #f2f2f2;
+}
+.btn-primary {
+    background: #ffaee5;
+    border-color: #ffaee5;
+    color: #fff;
+}
+.btn-primary:hover{
+    background: #aaa;
+}
 
+/*оценка в звездах*/
+.rating-area {
+	overflow: hidden;
+	width: 220px;
+	margin: 0 auto;
+}
+.rating-area:not(:checked) > input {
+	display: none;
+}
+.rating-area:not(:checked) > label {
+	float: right;
+	width: 35px;
+	padding: 0;
+	cursor: pointer;
+	font-size: 25px;
+	line-height: 25px;
+	color: lightgrey;
+	text-shadow: 1px 1px #bbb;
+}
+.rating-area:not(:checked) > label:before {
+	content: '★';
+}
+.rating-area > input:checked ~ label {
+	color: #ffaee5;
+	text-shadow: 1px 1px #c60;
+}
+.rating-area:not(:checked) > label:hover,
+.rating-area:not(:checked) > label:hover ~ label {
+	color: #ffaee5;
+}
+.rating-area > input:checked + label:hover,
+.rating-area > input:checked + label:hover ~ label,
+.rating-area > input:checked ~ label:hover,
+.rating-area > input:checked ~ label:hover ~ label,
+.rating-area > label:hover ~ input:checked ~ label {
+	color: #ffaee5;
+	text-shadow: 1px 1px #ffaee5;
+}
+.rate-area > label:active {
+	position: relative;
+}
+
+.form-fields {
+    width: 100%;
+}
+
+.form-field {
+    margin: 10px 0;
+}
+input{
+    left: 45px;
+    height: 45px;   
+    width: 96%;
+    color:#ffaee5;
+    font-size: 14px;
+    line-height: 16px;
+    border: 2px solid #ffaee5;
+    border-radius: 9px;
+    padding-left: 25px;
+    border-color: #ffaee5;
+}
+textarea{
+    background: #fff; 
+    width: 96%;
+    height: 110px;
+    border: 3px solid #ffaee5;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 10px;
+    -moz-background-clip: padding;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box; 
+    display:block;
+    font-family: 'Open Sans', sans-serif;
+    font-size:14px;
+    font-weight: 300;
+    color:#ffaee5;
+    padding-left:25px;
+    padding-right:20px;
+    padding-top:12px;
+    margin-bottom:20px;
+    overflow:hidden;
+}
 @media screen and (max-width: 1024px){
     .container{
         scale: 0.9;
